@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import *
 import random
 
@@ -112,7 +112,7 @@ class MyWindow(QWidget):
 
         self.bt1 = QPushButton()
         self.bt1.setText("자리배치")
-        self.bt1.clicked.connect(self.button_clicked)
+        self.bt1.clicked.connect(self.set_button)
         self.verticalLayoutR.addWidget(self.bt1)
 
         self.spacerItem = QSpacerItem(100 , 700, QSizePolicy.Fixed, QSizePolicy.Fixed)
@@ -120,6 +120,41 @@ class MyWindow(QWidget):
 
         self.principalLayout.addLayout(self.verticalLayoutR)
         self.principalLayout.setSpacing(10)
+
+    def set_button(self):
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
+        QTimer.singleShot(800, self.button_clicked);
+        self.button_clicked()
 
     def button_clicked(self):
 
@@ -152,7 +187,7 @@ class MyWindow(QWidget):
             self.stdArray.append(str(i+1))
 
         for i in range(womanval):
-            self.stdArray.append(str(i+31))
+            self.stdArray.append(str(i+21))
 
         for i in self.delArray:
             if self.stdArray.count(i):
@@ -183,7 +218,7 @@ class MyWindow(QWidget):
             for j in range(5):
                 if cnt < mcnt:
                     self.lbArray[i * 5 + j].setText(self.stdArray[cnt])
-                    if int(self.stdArray[cnt]) <= 30:
+                    if int(self.stdArray[cnt]) <= 20:
                         self.lbArray[i * 5 + j].setStyleSheet("""
                             background-color: rgba(0, 173, 181, 100);
                             color: white;
